@@ -1,7 +1,5 @@
 # 📡 IIR Filtering and Envelope Detection for IR Signals (Lọc IIR và phát hiện đường biên bao cho tín hiệu hồng ngoại)
 
-## 🇻🇳 Tiếng Việt
-
 ### 📖 Giới thiệu
 Dự án này tập trung vào việc mô phỏng toàn bộ chu trình truyền, nhận và xử lý tín hiệu hồng ngoại (IR) từ điều khiển từ xa. Tín hiệu điều khiển thực chất là các chuỗi dữ liệu số được điều chế trên sóng mang tần số 38kHz để tránh nhiễu từ môi trường. Bằng việc ứng dụng các thuật toán Xử lý tín hiệu số (DSP) trên MATLAB, hệ thống có thể trích xuất thành công mã lệnh từ một tín hiệu thô đã bị can nhiễu nặng nề.
 
@@ -37,53 +35,3 @@ Dự án này tập trung vào việc mô phỏng toàn bộ chu trình truyền
 Gõ lệnh `run('code_matlab.m')` trong Command Window hoặc nhấn nút Run trên giao diện.
 
 4. Quan sát kết quả trên Command Window (Bit gốc, Bit thu, BER) và phân tích biểu đồ 6 bước xử lý tín hiệu.
-
-## 🇬🇧 English Version
-### 📖 Introduction
-This project is an academic simulation of the transmission, reception, and digital signal processing (DSP) of an infrared (IR) remote control signal. Remote commands are digital data streams modulated onto a 38kHz carrier wave to mitigate environmental optical interference. Using MATLAB, this system applies core DSP techniques to successfully extract the original command sequence from a heavily distorted, noisy signal.
-
-### ⚙️ System Parameters
-Sampling Rate (fs): 1 MHz
-
-Carrier Frequency (fc): 38 kHz
-
-Bit Duration (Tb): 1 ms
-
-Data Format: 32-bit random sequence (OOK Modulation)
-
-Noise Simulation: AWGN (8dB SNR) & Ambient Light Noise (50Hz/120Hz)
-
-### 🚀 Signal Processing Pipeline
-Baseband Generation: A 32-bit random binary sequence is converted into an ideal rectangular pulse wave.
-
-OOK Modulation: The baseband signal is multiplied by a 38kHz carrier wave.
-
-Noisy Channel: Additive White Gaussian Noise (AWGN) and low-frequency ambient light noise are introduced.
-
-Band-pass Filtering: A 4th-order Chebyshev Type I IIR filter (6kHz bandwidth) with zero-phase filtering is applied to isolate the 38kHz carrier.
-
-Envelope Detection: Full-wave rectification followed by a 5kHz low-pass filter is used to smooth out the carrier ripples.
-
-Data Recovery: A dynamic decision threshold (50% of the maximum envelope amplitude) is used to evaluate the average energy per bit, determining the logic level and calculating the Bit Error Rate (BER).
-
-### 💻 Getting Started
-Prerequisites:
-
-MATLAB 2025a (or compatible versions).
-
-Signal Processing Toolbox (Required for `cheby1` and `filtfilt` functions).
-
-Installation & Usage:
-
-1. Clone this repository:
-
-   ```bash
-   git clone [https://github.com/your-username/ir-remote-dsp.git](https://github.com/your-username/ir-remote-dsp.git)
-
-2. Open MATLAB and navigate to the cloned directory.
-
-3. Run the main script `code_matlab.m`:
-
-Type `run('code_matlab.m')` in the Command Window or click the Run button.
-
-4. Check the Command Window for terminal outputs (Original bits, Recovered bits, BER) and analyze the generated 6-subplot figure detailing the signal at each DSP stage.

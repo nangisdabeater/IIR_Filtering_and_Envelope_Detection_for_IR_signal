@@ -1,4 +1,4 @@
-# 📡 IIR Filtering and Envelope Detection for IR Signals (Lọc IIR và phát hiện đường biên bao cho tín hiệu hồng ngoại)
+# DỰ ÁN: PHÁT HIỆN VÀ XỬ LÍ TÍN HIỆU HỒNG NGOẠI Ở ĐIỀU KHIỂN TỪ XA
 
 ### 📖 Giới thiệu
 Dự án này tập trung vào việc mô phỏng toàn bộ chu trình truyền, nhận và xử lý tín hiệu hồng ngoại (IR) từ điều khiển từ xa. Tín hiệu điều khiển thực chất là các chuỗi dữ liệu số được điều chế trên sóng mang tần số 38kHz để tránh nhiễu từ môi trường. Bằng việc ứng dụng các thuật toán Xử lý tín hiệu số (DSP) trên MATLAB, hệ thống có thể trích xuất thành công mã lệnh từ một tín hiệu thô đã bị can nhiễu nặng nề.
